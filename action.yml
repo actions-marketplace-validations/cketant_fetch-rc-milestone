@@ -1,0 +1,33 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
+name: Fetch Release Candidate Milestones
+author: Chris Ketant
+description: This action works for projects that leverage GitHub milestones for Release Candidate PR tracking.\
+  Such that each milestone represents a group of PRs that are going in the next Release Candidate. Fetch the\
+  next Release Candidate milestone that is to be deployed next.
+branding:
+  icon: archive
+  color: green
+inputs:
+  repoOwner:
+    description: The account owner of the repo
+    required: true
+  repo:
+    description: The name of the repo
+    required: true
+  githubApiToken:
+    description: The api token for accessing GitHub api
+    required: true
+  dueOnDate:
+    description: Find Release Candidate Milestone that has this due on date. If not provided then we find the upcoming RC Milestone.\
+      Expected format is YYYY-MM-DDTHH:mm:ss.sssZ ISO8601 format
+    required: false
+outputs:
+  milestone-title:
+    description: Milestone title
+  milestone-number:
+    description: Milestone number
+  milestone-id:
+    description: Milestone number ID
+runs:
+  using: node16
+  main: dist/index.js
