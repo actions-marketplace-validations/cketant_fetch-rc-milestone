@@ -1,9 +1,9 @@
 # https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
 name: Fetch Release Candidate Milestones
 author: Chris Ketant
-description: This action works for projects that leverage GitHub milestones for Release Candidate PR tracking.\
-  Such that each milestone represents a group of PRs that are going in the next Release Candidate. Fetch the\
-  next Release Candidate milestone that is to be deployed next.
+description: Use GitHub milestones for Release Candidate PR tracking.\
+  Each milestone represents a group of PRs that are going in the next Release Candidate. Fetch the\
+  next Release Candidate milestone that is to be deployed to production next.
 branding:
   icon: archive
   color: green
