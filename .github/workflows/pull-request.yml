@@ -16,7 +16,7 @@ jobs:
           echo ::set-output name=repo_name::${GITHUB_REPOSITORY#*/}
       - name: Get RC Milestone
         id: result
-        uses: cketant/fetch-rc-milestone@v1.0.0
+        uses: cketant/fetch-rc-milestone@fix/bad_request
         with:
           repoOwner: ${{ steps.gh_vars.outputs.repo_owner }}
           repo: ${{ steps.gh_vars.outputs.repo_name }}
