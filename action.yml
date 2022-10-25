@@ -26,6 +26,8 @@ outputs:
     description: Milestone number
   milestone-id:
     description: Milestone number ID
+  milestone-url:
+    description: Milestone Home Page
 runs:
   using: node16
   main: dist/index.js

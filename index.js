@@ -84,9 +84,10 @@ const run = async () => {
 		core.setOutput('milestone-title', milestone ? milestone.title : null)
 		core.setOutput('milestone-number', milestone ? milestone.number : null)
 		core.setOutput('milestone-id', milestone ? milestone.id : null)
+		core.setOutput('milestone-url', milestone ? milestone.html_url : null)
 	} catch (error) {
 		core.debug(error)
-		core.setFailed(error.message)
+		core.setFailed(error)
 	}
 }
 
