@@ -58,12 +58,15 @@ The unique number representing the milestone.
 
 The unique id representing the milestone.
 
+### `milestone-url`
+
+The Milestone home page
 
 ## Example usage
 ```
 steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Fetch milestones
         uses: ./.github/actions/fetch-rc-milestone
         with:
