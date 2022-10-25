@@ -10480,7 +10480,6 @@ const run = async () => {
 		core.setOutput('milestone-id', milestone ? milestone.id : null)
 	} catch (error) {
 		core.debug(error)
-		console.log(error)
 		core.setFailed(error.message)
 	}
 }
