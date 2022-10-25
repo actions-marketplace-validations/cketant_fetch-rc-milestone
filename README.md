@@ -65,7 +65,7 @@ steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Fetch milestones
-        uses: ./.github/actions/fetch-rc-milestones
+        uses: ./.github/actions/fetch-rc-milestone
         with:
           repoOwner: <OWNER-ACCOUNT-NAME>
           repo: <REPO-NAME>

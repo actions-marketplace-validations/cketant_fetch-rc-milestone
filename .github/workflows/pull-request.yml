@@ -1,0 +1,28 @@
+name: pull_request
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+jobs:
+  test_action_job:
+    name: Test Action Job
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Get GH vars
+        id: gh_vars
+        run: |
+          echo ::set-output name=repo_owner::${GITHUB_REPOSITORY_OWNER}
+          echo ::set-output name=repo_name::${GITHUB_REPOSITORY#*/}
+      - name: Get RC Milestone
+        id: result
+        uses: cketant/fetch-rc-milestone@v1.0.0
+        with:
+          repoOwner: ${{ steps.gh_vars.outputs.repo_owner }}
+          repo: ${{ steps.gh_vars.outputs.repo_name }}
+          githubApiToken: ${{ secrets.GH_API_TOKEN }}
+      - name: Print Results
+        run: |
+          echo "${{ steps.result.outputs.milestone-title }}"
+          echo "${{ steps.result.outputs.milestone-number }}"
+          echo "${{ steps.result.outputs.milestone-id }}"

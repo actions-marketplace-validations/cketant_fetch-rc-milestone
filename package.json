@@ -1,6 +1,6 @@
 {
   "name": "fetch-rc-milestones",
-  "private": true,
+  "private": false,
   "main": "dist/index.js",
   "version": "1.0.0",
   "scripts": {
