@@ -20,7 +20,7 @@ jobs:
         with:
           repoOwner: ${{ steps.gh_vars.outputs.repo_owner }}
           repo: ${{ steps.gh_vars.outputs.repo_name }}
-          githubApiToken: ${{ secrets.GITHUB_TOKEN }}
+          githubApiToken: ${{ secrets.GH_API_TOKEN }}
       - name: Print Results
         run: |
           echo "${{ steps.result.outputs.milestone-title }}"
